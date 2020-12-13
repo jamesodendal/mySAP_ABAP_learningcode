@@ -290,10 +290,10 @@ LOOP AT itab08 INTO wa_itab08.
 
 ENDLOOP.
 
-LOOP at itab08.
-  IF wa_itab08-surname = 'ODENDAL'.
+  LOOP at itab08.
+   IF wa_itab08-surname = 'ODENDAL'.
      wa_itab08-surname = 'WARREN'
-     MODIFY itab08 FROM wa_itab08.
+       MODIFY itab08 FROM wa_itab08.
   ENDIF. 
 ENDLOOP.
 
@@ -312,7 +312,7 @@ READ TABLE itab08 INDEX 5 INTO wa_itab08.
 
 
 READ TABLE itab08 INDEX 5 INTO wa_itab08
-  WITH KEY surname = 'Smith'.
+   WITH KEY surname = 'Smith'.
 
 
 * DELETE INTERNAL TABLES
@@ -343,7 +343,7 @@ SELECT * FROM zemployees.
 
 ENDSELECT. 
 
-  WRITE / itab09-surname.
+WRITE / itab09-surname.
 
 
 
